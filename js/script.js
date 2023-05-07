@@ -59,3 +59,48 @@ function imgAutoR () {
    imgLi[index].classList.add("active") 
 }
 setInterval(imgAutoR,4000)
+
+function toggleRegisterForm() {
+    var registerForm = document.getElementById("register-form");
+    if (registerForm.style.display === "none") {
+        registerForm.style.display = "block";
+    } else {
+        registerForm.style.display = "none";
+    }
+}
+function registerUser() {
+    // Lấy giá trị người dùng nhập vào
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+
+    // Kiểm tra nếu tên đăng nhập và mật khẩu hợp lệ
+    if (username != "" && password != "" && email != "") {
+        alert("Đăng kí thành công");
+    } else {
+        alert("Vui lòng điền đầy đủ thông tin");
+    }
+}
+
+function toggleLoginForm() {
+    var loginForm = document.getElementById("login-form");
+    if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+    } else {
+        loginForm.style.display = "none";
+    }
+}
+
+// Hàm xử lý hành động đăng nhập
+function loginUser() {
+    // Lấy giá trị người dùng nhập vào
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Kiểm tra nếu tên đăng nhập và mật khẩu hợp lệ
+    if (username === "admin" && password === "123456") {
+        alert("Đăng nhập thành công");
+    } else {
+        alert("Tên đăng nhập hoặc mật khẩu không đúng");
+    }
+}

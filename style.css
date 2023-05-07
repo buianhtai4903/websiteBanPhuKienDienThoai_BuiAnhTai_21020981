@@ -535,3 +535,41 @@ li {
 .product-gallery-one-content-right-bottom-item-text li:nth-child(3) {
     font-weight: bold;
 }
+
+#register-form {
+    display: none;
+    z-index: 20;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #33FFFF;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    display:none;
+    border: 1px solid rgb(175, 69, 69);
+}
+
+#login-form {
+    display: none;
+    z-index: 20;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #33FFFF;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    display:none;
+    border: 1px solid rgb(175, 69, 69);
+}

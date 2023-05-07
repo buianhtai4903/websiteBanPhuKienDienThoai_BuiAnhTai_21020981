@@ -70,8 +70,24 @@
                 <li><input type="text" style="font-size: 12px" placeholder="Bạn tìm phụ kiện gì..."><i class="fa-solid fa-magnifying-glass"></i></li>
                 <li><a href="#"></a><button><i class="fa-sharp fa-solid fa-cart-shopping"></i>Giỏ hàng</button></li>
                 <li><a href="#">Lịch sử <br> đơn hàng</a></li>
-                <li><a href="#">Đăng Nhập</a></li>
-                <li><a href="#">Đăng Kí</a></li>
+                <li><a href="#" value="Đăng nhập" onclick="toggleLoginForm()">Đăng Nhập</a></li>
+                <form id="login-form">
+                    <label>Tên đăng nhập:</label>
+                    <input type="text" id="username"><br><br>
+                    <label>Mật khẩu:</label>
+                    <input type="password" id="password"><br><br>
+                    <input type="button" value="Đăng nhập" onclick="loginUser()">
+                </form>
+                <li><a href="#" value="Đăng kí" onclick="toggleRegisterForm()">Đăng Kí</a></li>
+                <form id="register-form">
+                    <label>Tên đăng nhập:</label>
+                    <input type="text" id="username"><br><br>
+                    <label>Mật khẩu:</label>
+                    <input type="password" id="password"><br><br>
+                    <label>Email:</label>
+                    <input type="email" id="email"><br><br>
+                    <input type="button" value="Đăng kí" onclick="registerUser()">
+                </form>
             </ul>
         </div>
     </nav>
