@@ -2,6 +2,7 @@
 const adressbtn = document.querySelector('#adress-form')
 const adressclose = document.querySelector('#adress-close')
 
+
 adressbtn.addEventListener("click", function(){
     document.querySelector('.adress-form').style.display = "flex";
     
@@ -75,7 +76,7 @@ function registerUser() {
     var email = document.getElementById("email").value;
 
     // Kiểm tra nếu tên đăng nhập và mật khẩu hợp lệ
-    if (username != "" && password != "" && email != "") {
+    if (username != "admin" && password != "123456" && email != "123@gmail.com") {
         alert("Đăng kí thành công");
     } else {
         alert("Vui lòng điền đầy đủ thông tin");
@@ -104,3 +105,5 @@ function loginUser() {
         alert("Tên đăng nhập hoặc mật khẩu không đúng");
     }
 }
+
+
