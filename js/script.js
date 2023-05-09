@@ -106,4 +106,62 @@ function loginUser() {
     }
 }
 
+/* shop cart*/
+const cartBtn = document.getElementById('cart-btn');
+const cart = document.getElementById('cart');
+const cartItems = document.getElementById('cart-items');
+const totalPrice = document.getElementById('total-price');
+const clearCartBtn = document.getElementById('clear-cart-btn');
+const checkoutBtn = document.getElementById('checkout-btn');
+const products = document.getElementById('products');
+
+let cartArray = [];
+
+function renderCart() {
+  cartItems.innerHTML = '';
+  let total = 0;
+  cartArray.forEach(item => {
+    const li = document.createElement('li');
+    li.innerHTML = `${item.name} <span>$${item.price.toFixed(3)}</span><br>`;
+    cartItems.appendChild(li);
+    total += item.price;
+  });
+  totalPrice.textContent = `Tổng: ${total.toFixed(3)}Vnđ`;
+}
+
+function addToCart(name, price) {
+  cartArray.push({ name, price });
+  renderCart();
+}
+
+function clearCart() {
+  cartArray = [];
+  renderCart();
+}
+
+function checkout() {
+  checkoutBtn.disabled = true;
+  setTimeout(() => {
+    alert('Cảm ơn bạn đã thanh toán!');
+    clearCart();
+    checkoutBtn.disabled = false;
+  }, 1000);
+}
+
+cartBtn.addEventListener('click', () => {
+  cart.classList.toggle('show');
+});
+
+products.addEventListener('click', event => {
+  if (event.target.classList.contains('add-to-cart-btn')) {
+    const name = event.target.getAttribute('data-name');
+    const price = parseFloat(event.target.getAttribute('data-price'));
+    addToCart(name, price);
+  }
+});
+
+clearCartBtn.addEventListener('click', clearCart);
+
+checkoutBtn.addEventListener('click', checkout);
+
 
